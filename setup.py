@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='nose-moduleonly',
-    version='0.1',
+    version='0.1.1',
     description="",
     long_description="""""",
     author='Craig de Stigter',

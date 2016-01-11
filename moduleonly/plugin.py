@@ -26,5 +26,10 @@ class ModuleOnly(Plugin):
         if r == 'nose.failure':
             # Fallback, because 'nose.failure' isn't very helpful.
             # instead give e.g. 'Failure: ImportError (No module named foo.bar)'
-            return str(test.test)
+            s = str(test.test)
+
+            # Only include the first line; we want the output to be greppable
+            # by '... ok' in --collect-only output, so we can't include more than
+            # one line.
+            return s.strip().splitlines()[0]
         return r
